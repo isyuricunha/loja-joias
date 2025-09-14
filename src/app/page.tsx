@@ -66,13 +66,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Clean Karolaine do Yuri Header */}
+      {/* Clean AXELS Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo Karolaine do Yuri Style */}
+            {/* Logo AXELS Style */}
             <div className="flex items-center">
-              <h1 className="text-2xl font-light tracking-[0.3em] text-gray-900">Karolaine do Yuri</h1>
+              <h1 className="text-2xl font-light tracking-[0.3em] text-gray-900">AXELS</h1>
             </div>
 
             {/* Navigation */}
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Karolaine do Yuri Hero Section - "Discover Sparkle with Style" */}
+      {/* AXELS Hero Section - "Discover Sparkle with Style" */}
       <section className="relative">
         <div className="grid lg:grid-cols-2 min-h-[80vh]">
           {/* Left Side - Content */}
@@ -239,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Products Section - Karolaine do Yuri Style */}
+      {/* Our Products Section - AXELS Style */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12">
@@ -329,7 +329,7 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
-                {/* Product Cards - Karolaine do Yuri Style */}
+                {/* Product Cards - AXELS Style */}
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
                     <img
