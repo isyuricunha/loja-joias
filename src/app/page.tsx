@@ -108,54 +108,66 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Luxury Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 lg:py-32">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-amber-400 rounded-full"></div>
-          <div className="absolute top-32 right-20 w-20 h-20 border border-amber-400 rounded-full"></div>
-          <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-amber-400 rounded-full"></div>
+      {/* Minimalist Luxury Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-black py-16 lg:py-20">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-amber-400 rounded-full"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-20 h-20 border border-amber-300 rounded-full"></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            {/* Minimal Diamond Icon */}
             <div className="flex justify-center mb-6">
-              <Diamond className="h-16 w-16 text-amber-400" />
+              <Diamond className="h-8 w-8 text-amber-400" />
             </div>
             
-            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-6">
-              Descubra Joias
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Extraordinárias</span>
+            {/* Refined Typography */}
+            <h2 className="text-4xl lg:text-6xl font-light mb-6 leading-tight tracking-tight">
+              <span className="block text-white font-light">Descubra Joias</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 font-normal">Extraordinárias</span>
             </h2>
             
-            <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Coleção exclusiva de semijoias em <span className="text-amber-400 font-semibold">ouro 18k</span>, 
-              <span className="text-gray-300 font-semibold"> prata 925</span> e materiais premium
+            {/* Elegant Description */}
+            <p className="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+              Coleção exclusiva de semijoias em 
+              <span className="text-amber-300 font-medium">ouro 18k</span>, 
+              <span className="text-gray-200 font-medium">prata 925</span> e materiais premium
             </p>
             
+            {/* Refined Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-medium px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                <Sparkles className="h-5 w-5 mr-2 inline" />
-                Explorar Coleção
+              <button className="group bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                <div className="flex items-center">
+                  <Sparkles className="h-4 w-4 mr-2" />
+                  <span>Explorar Coleção</span>
+                </div>
               </button>
-              <button className="bg-white/80 backdrop-blur-sm text-gray-700 font-medium px-6 py-3 rounded-xl border border-gray-200 hover:border-amber-300 shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+              
+              <button className="bg-white/10 backdrop-blur-sm text-white font-medium px-8 py-3 rounded-xl border border-white/20 hover:border-amber-300/50 hover:bg-white/20 transition-all duration-300">
                 Ver Lançamentos
               </button>
             </div>
           </div>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-amber-50 to-transparent"></div>
+        {/* Subtle Bottom Gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-amber-50/30 to-transparent"></div>
       </section>
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Elegant Sidebar */}
-          <aside className="lg:w-80 flex-shrink-0">
+          {/* Minimalist Sidebar */}
+          <aside className="lg:w-72 flex-shrink-0">
             <div className="space-y-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                  <Search className="h-5 w-5 mr-2 text-amber-600" />
+              {/* Clean Search Card */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                  <div className="bg-amber-500 p-1.5 rounded-lg mr-3">
+                    <Search className="h-4 w-4 text-white" />
+                  </div>
                   Buscar Produtos
                 </h3>
                 <SearchBar
@@ -165,6 +177,7 @@ export default function Home() {
                 />
               </div>
               
+              {/* Enhanced Category Filter */}
               <CategoryFilter
                 categories={categories.map(cat => cat.name)}
                 selectedCategory={selectedCategory}

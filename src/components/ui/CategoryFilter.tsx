@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Filter, X, ChevronDown, ChevronUp, Sparkles, Crown, Gem } from 'lucide-react';
+import { Filter, X, ChevronDown, ChevronUp, Sparkles, Crown, Gem, Tag } from 'lucide-react';
 import { Category, MaterialType, MATERIAL_TYPE_LABELS } from '@/types';
 
 interface CategoryFilterProps {
@@ -48,7 +48,7 @@ export default function CategoryFilter({
   const hasActiveFilters = selectedCategory || selectedMaterial;
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
       {/* Mobile Toggle */}
       <div className="lg:hidden">
         <button
@@ -56,8 +56,10 @@ export default function CategoryFilter({
           className="w-full flex items-center justify-between p-6 text-left border-b border-gray-200/50"
         >
           <div className="flex items-center space-x-3">
-            <Filter className="h-5 w-5 text-amber-600" />
-            <span className="font-semibold text-gray-800">Filtros</span>
+            <div className="bg-amber-500 p-1.5 rounded-lg">
+              <Filter className="h-4 w-4 text-white" />
+            </div>
+            <span className="font-semibold text-gray-900 text-lg">Filtros</span>
             {hasActiveFilters && (
               <span className="bg-amber-100 text-amber-700 text-xs px-3 py-1 rounded-full font-medium">
                 Ativos
@@ -100,11 +102,14 @@ export default function CategoryFilter({
         <div>
           <button
             onClick={() => setShowCategories(!showCategories)}
-            className="flex items-center justify-between w-full mb-4 group"
+            className="w-full flex items-center justify-between mb-4 group"
           >
-            <h4 className="font-semibold text-dark-800 group-hover:text-gold-600 transition-colors">
+            <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+              <div className="bg-amber-500 p-1.5 rounded-lg mr-3">
+                <Tag className="h-4 w-4 text-white" />
+              </div>
               Categorias
-            </h4>
+            </h3>
             {showCategories ? (
               <ChevronUp className="h-4 w-4 text-pearl-400 group-hover:text-gold-500 transition-colors" />
             ) : (
