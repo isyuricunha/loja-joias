@@ -5,8 +5,9 @@ import { Search, Filter, Grid, List, Sparkles, Crown, Diamond } from 'lucide-rea
 import { Product, Category, MaterialType, MATERIAL_TYPE_LABELS } from '@/types';
 import ProductCard from '@/components/ui/ProductCard';
 import CategoryFilter from '@/components/ui/CategoryFilter';
-import SearchBar from '@/components/ui/SearchBar';
+import AdvancedSearch from '@/components/ui/AdvancedSearch';
 import ProductGrid from '@/components/ui/ProductGrid';
+import RecommendedProducts from '@/components/ui/RecommendedProducts';
 import FloatingWhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchFilters, setSearchFilters] = useState<any>({});
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedMaterial, setSelectedMaterial] = useState<MaterialType | ''>('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -21,14 +23,23 @@ export default function Home() {
   useEffect(() => {
     fetchProducts();
     fetchCategories();
-  }, [searchQuery, selectedCategory, selectedMaterial]);
+  }, [searchQuery, searchFilters, selectedCategory, selectedMaterial]);
 
   const fetchProducts = async () => {
     try {
       const params = new URLSearchParams();
-      if (searchQuery) params.append('search', searchQuery);
+      if (searchQuery) params.append('q', searchQuery);
       if (selectedCategory) params.append('category', selectedCategory);
-      if (selectedMaterial) params.append('material', selectedMaterial);
+      if (selectedMaterial) params.append('materialType', selectedMaterial);
+      
+      // Add search filters
+      if (searchFilters.materialType) params.append('materialType', searchFilters.materialType);
+      if (searchFilters.inStock) params.append('inStock', 'true');
+      if (searchFilters.sortBy) params.append('sortBy', searchFilters.sortBy);
+      if (searchFilters.priceRange) {
+        params.append('priceMin', searchFilters.priceRange[0].toString());
+        params.append('priceMax', searchFilters.priceRange[1].toString());
+      }
 
       const response = await fetch(`/api/products?${params}`);
       const data = await response.json();
@@ -257,6 +268,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Search Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-light text-gray-900 mb-4">Encontre a Joia Perfeita</h2>
+            <p className="text-gray-600 font-light">Busque por categoria, material ou preço</p>
+          </div>
+          <AdvancedSearch
+            value={searchQuery}
+            onChange={setSearchQuery}
+            onFiltersChange={setSearchFilters}
+            placeholder="Buscar joias, anéis, colares..."
+          />
+        </div>
+      </section>
+
       {/* Our Products Section - AXELS Style */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -442,6 +469,22 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Recommended Products */}
+      <RecommendedProducts 
+        title="Produtos Recomendados"
+        subtitle="Selecionados especialmente para você"
+        type="recommended"
+        limit={4}
+      />
+
+      {/* Featured Products */}
+      <RecommendedProducts 
+        title="Produtos em Destaque"
+        subtitle="Nossa seleção premium"
+        type="featured"
+        limit={4}
+      />
 
       <FloatingWhatsAppButton />
     </div>

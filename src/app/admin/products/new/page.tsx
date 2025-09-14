@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import { Upload, X, Plus } from 'lucide-react'
 import { Category, MaterialType, MATERIAL_TYPE_LABELS } from '@/types'
 import { generateSlug } from '@/lib/utils'
+import ImageUpload from '@/components/ui/ImageUpload'
 
 interface ProductFormData {
   name: string
@@ -71,19 +72,6 @@ export default function NewProduct() {
     }
   }, [watchName, setValue])
 
-  const addImage = () => {
-    setImages([...images, { imageUrl: '', altText: '' }])
-  }
-
-  const updateImage = (index: number, field: keyof ProductImage, value: string) => {
-    const newImages = [...images]
-    newImages[index] = { ...newImages[index], [field]: value }
-    setImages(newImages)
-  }
-
-  const removeImage = (index: number) => {
-    setImages(images.filter((_, i) => i !== index))
-  }
 
   const addSize = () => {
     setSizes([...sizes, { sizeName: '', sizeValue: '', isAvailable: true }])
@@ -245,78 +233,12 @@ export default function NewProduct() {
 
             {/* Images */}
             <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-semibold text-neutral-900">Imagens</h2>
-                <button
-                  type="button"
-                  onClick={addImage}
-                  className="btn-secondary flex items-center gap-2"
-                >
-                  <Plus size={16} />
-                  Adicionar Imagem
-                </button>
-              </div>
-
-              <div className="space-y-4">
-                {images.map((image, index) => (
-                  <div key={index} className="border border-neutral-200 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm font-medium text-neutral-700">
-                        Imagem {index + 1} {index === 0 && '(Principal)'}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => removeImage(index)}
-                        className="text-error-500 hover:text-error-700"
-                      >
-                        <X size={16} />
-                      </button>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div>
-                        <label className="block text-sm font-medium text-neutral-700 mb-1">
-                          URL da Imagem
-                        </label>
-                        <input
-                          type="url"
-                          value={image.imageUrl}
-                          onChange={(e) => updateImage(index, 'imageUrl', e.target.value)}
-                          className="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                          placeholder="https://exemplo.com/imagem.jpg"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-neutral-700 mb-1">
-                          Texto Alternativo
-                        </label>
-                        <input
-                          type="text"
-                          value={image.altText}
-                          onChange={(e) => updateImage(index, 'altText', e.target.value)}
-                          className="w-full px-3 py-2 border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                          placeholder="Descrição da imagem"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-
-                {images.length === 0 && (
-                  <div className="text-center py-8 border-2 border-dashed border-neutral-200 rounded-lg">
-                    <Upload className="mx-auto h-12 w-12 text-neutral-400" />
-                    <p className="mt-2 text-sm text-neutral-600">Nenhuma imagem adicionada</p>
-                    <button
-                      type="button"
-                      onClick={addImage}
-                      className="mt-2 btn-primary"
-                    >
-                      Adicionar Primeira Imagem
-                    </button>
-                  </div>
-                )}
-              </div>
+              <h2 className="text-lg font-semibold text-neutral-900 mb-4">Imagens</h2>
+              <ImageUpload
+                images={images}
+                onImagesChange={setImages}
+                maxImages={5}
+              />
             </div>
 
             {/* Sizes */}
