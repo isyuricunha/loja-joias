@@ -65,142 +65,365 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
-      {/* Premium Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-200/50">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-50/20 to-transparent"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <Crown className="h-8 w-8 text-amber-600" />
-              </div>
-              <div>
-                <h1 className="text-3xl font-bold">
-                  <span className="text-gray-800">Loja de </span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">Joias</span>
-                </h1>
-                <p className="text-xs text-gray-600 font-medium tracking-wider uppercase">
-                  Elegância & Sofisticação
-                </p>
-              </div>
+    <div className="min-h-screen bg-white">
+      {/* Clean AXELS Header */}
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo AXELS Style */}
+            <div className="flex items-center">
+              <h1 className="text-2xl font-light tracking-[0.3em] text-gray-900">AXELS</h1>
             </div>
-            
+
+            {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 relative group">
-                Catálogo
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full"></span>
+              <a href="#" className="text-gray-600 hover:text-gray-900 font-light text-sm tracking-wide transition-all duration-300 uppercase">
+                Categorias
               </a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 relative group">
-                Coleções
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 relative group">
+              <a href="#" className="text-gray-600 hover:text-gray-900 font-light text-sm tracking-wide transition-all duration-300 uppercase">
                 Sobre
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 relative group">
+              <a href="#" className="text-gray-600 hover:text-gray-900 font-light text-sm tracking-wide transition-all duration-300 uppercase">
+                Loja
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 font-light text-sm tracking-wide transition-all duration-300 uppercase">
                 Contato
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </nav>
+
+            {/* Icons */}
+            <div className="flex items-center space-x-4">
+              <Search className="h-5 w-5 text-gray-600 hover:text-gray-900 cursor-pointer" />
+              <div className="w-5 h-5 border border-gray-600 rounded-full cursor-pointer"></div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Minimalist Luxury Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-black py-16 lg:py-20">
-        {/* Subtle Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-amber-400 rounded-full"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-20 h-20 border border-amber-300 rounded-full"></div>
-        </div>
-        
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            {/* Minimal Diamond Icon */}
-            <div className="flex justify-center mb-6">
-              <Diamond className="h-8 w-8 text-amber-400" />
-            </div>
-            
-            {/* Refined Typography */}
-            <h2 className="text-4xl lg:text-6xl font-light mb-6 leading-tight tracking-tight">
-              <span className="block text-white font-light">Descubra Joias</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 font-normal">Extraordinárias</span>
-            </h2>
-            
-            {/* Elegant Description */}
-            <p className="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              Coleção exclusiva de semijoias em 
-              <span className="text-amber-300 font-medium">ouro 18k</span>, 
-              <span className="text-gray-200 font-medium">prata 925</span> e materiais premium
-            </p>
-            
-            {/* Refined Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                <div className="flex items-center">
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  <span>Explorar Coleção</span>
-                </div>
-              </button>
+      {/* AXELS Hero Section - "Discover Sparkle with Style" */}
+      <section className="relative">
+        <div className="grid lg:grid-cols-2 min-h-[80vh]">
+          {/* Left Side - Content */}
+          <div className="flex items-center justify-center px-8 lg:px-16 py-20">
+            <div className="max-w-lg">
+              <h1 className="text-5xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight">
+                DESCUBRA O BRILHO
+                <br />
+                <span className="italic">com Estilo</span>
+              </h1>
               
-              <button className="bg-white/10 backdrop-blur-sm text-white font-medium px-8 py-3 rounded-xl border border-white/20 hover:border-amber-300/50 hover:bg-white/20 transition-all duration-300">
-                Ver Lançamentos
+              <p className="text-gray-600 text-lg font-light leading-relaxed mb-12 max-w-md">
+                Coleção exclusiva de joias artesanais criadas com diamantes raros e metais preciosos para a perfeição absoluta.
+              </p>
+              
+              <button className="bg-gray-900 text-white px-8 py-3 font-light tracking-wide text-sm uppercase hover:bg-gray-800 transition-all duration-300">
+                Comprar
               </button>
             </div>
           </div>
-        </div>
-        
-        {/* Subtle Bottom Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-amber-50/30 to-transparent"></div>
-      </section>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Minimalist Sidebar */}
-          <aside className="lg:w-72 flex-shrink-0">
-            <div className="space-y-6">
-              {/* Clean Search Card */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <div className="bg-amber-500 p-1.5 rounded-lg mr-3">
-                    <Search className="h-4 w-4 text-white" />
-                  </div>
-                  Buscar Produtos
-                </h3>
-                <SearchBar
-                  value={searchQuery}
-                  onChange={setSearchQuery}
-                  placeholder="Digite o nome da joia..."
-                />
-              </div>
-              
-              {/* Enhanced Category Filter */}
-              <CategoryFilter
-                categories={categories.map(cat => cat.name)}
-                selectedCategory={selectedCategory}
-                selectedMaterial={selectedMaterial}
-                onCategoryChange={handleCategoryChange}
-                onMaterialChange={handleMaterialChange}
-                onClearFilters={clearFilters}
-              />
-            </div>
-          </aside>
-
-          {/* Premium Product Grid */}
-          <div className="flex-1">
-            <ProductGrid
-              products={products}
-              loading={loading}
-              searchQuery={searchQuery}
-              selectedCategory={selectedCategory}
-              selectedMaterial={selectedMaterial}
+          {/* Right Side - Product Image */}
+          <div className="relative overflow-hidden bg-gray-50">
+            <img 
+              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              alt="Luxury Jewelry"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Best Seller Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-3xl font-light text-gray-900">Mais Vendidos</h2>
+            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm font-light tracking-wide uppercase">Ver Todos</a>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {/* Product Cards */}
+            <div className="group">
+              <div className="relative overflow-hidden mb-4 bg-gray-50">
+                <img 
+                  src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Diamond Drop Earrings"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Ver Mais
+                </button>
+              </div>
+              <h3 className="text-gray-900 font-light mb-1">Brincos Gota Diamante</h3>
+              <p className="text-gray-600 text-sm">R$ 2.890</p>
+            </div>
+
+            <div className="group">
+              <div className="relative overflow-hidden mb-4 bg-gray-50">
+                <img 
+                  src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Femme Chunky Watch"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Ver Mais
+                </button>
+              </div>
+              <h3 className="text-gray-900 font-light mb-1">Relógio Femme Chunky</h3>
+              <p className="text-gray-600 text-sm">R$ 1.450</p>
+            </div>
+
+            <div className="group">
+              <div className="relative overflow-hidden mb-4 bg-gray-50">
+                <img 
+                  src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Birthday Chain Bracelet"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Ver Mais
+                </button>
+              </div>
+              <h3 className="text-gray-900 font-light mb-1">Pulseira Corrente Aniversário</h3>
+              <p className="text-gray-600 text-sm">R$ 890</p>
+            </div>
+
+            <div className="group">
+              <div className="relative overflow-hidden mb-4 bg-gray-50">
+                <img 
+                  src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Pearl Stud Earrings"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Ver Mais
+                </button>
+              </div>
+              <h3 className="text-gray-900 font-light mb-1">Brincos Pérola</h3>
+              <p className="text-gray-600 text-sm">R$ 1.290</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live in Glamour Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
+                Viva com
+                <br />
+                <span className="italic">Glamour</span>
+              </h2>
+              <p className="text-gray-600 text-lg font-light leading-relaxed mb-8">
+                Descubra o glamour perfeito com nossa coleção exclusiva de joias artesanais.
+              </p>
+              <button className="border border-gray-900 text-gray-900 px-8 py-3 font-light tracking-wide text-sm uppercase hover:bg-gray-900 hover:text-white transition-all duration-300">
+                Comprar Agora
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img 
+                src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Luxury Collection"
+                className="w-full h-64 object-cover"
+              />
+              <img 
+                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Elegant Jewelry"
+                className="w-full h-64 object-cover mt-8"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Products Section - AXELS Style */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Clean Sidebar */}
+            <aside className="lg:w-80 flex-shrink-0">
+              <div className="space-y-8">
+                {/* Categories */}
+                <div>
+                  <h3 className="text-lg font-light text-gray-900 mb-4">Categorias</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Brincos</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Colares</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Pulseiras</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Anéis</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Price Range */}
+                <div>
+                  <h3 className="text-lg font-light text-gray-900 mb-4">Preço</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">R$ 0 - R$ 500</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">R$ 500 - R$ 1.000</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">R$ 1.000 - R$ 2.000</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">R$ 2.000+</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Material */}
+                <div>
+                  <h3 className="text-lg font-light text-gray-900 mb-4">Material</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Ouro 18k</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Prata 925</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input type="checkbox" className="mr-3" />
+                      <span className="text-gray-600 font-light">Folheado</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            {/* Product Grid */}
+            <div className="flex-1">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-2xl font-light text-gray-900">Nossos Produtos</h2>
+                <div className="flex items-center space-x-4">
+                  <span className="text-gray-600 text-sm">Ordenar por:</span>
+                  <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+                    <option>Relevância</option>
+                    <option>Menor Preço</option>
+                    <option>Maior Preço</option>
+                    <option>Mais Recentes</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* Product Cards - AXELS Style */}
+                <div className="group">
+                  <div className="relative overflow-hidden mb-4 bg-gray-50">
+                    <img 
+                      src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Brincos Gota Diamante"
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Ver Mais
+                    </button>
+                  </div>
+                  <h3 className="text-gray-900 font-light mb-1">Brincos Gota Diamante</h3>
+                  <p className="text-gray-600 text-sm">R$ 2.890</p>
+                </div>
+
+                <div className="group">
+                  <div className="relative overflow-hidden mb-4 bg-gray-50">
+                    <img 
+                      src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Relógio Femme Chunky"
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Ver Mais
+                    </button>
+                  </div>
+                  <h3 className="text-gray-900 font-light mb-1">Relógio Femme Chunky</h3>
+                  <p className="text-gray-600 text-sm">R$ 1.450</p>
+                </div>
+
+                <div className="group">
+                  <div className="relative overflow-hidden mb-4 bg-gray-50">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Pulseira Corrente Aniversário"
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Ver Mais
+                    </button>
+                  </div>
+                  <h3 className="text-gray-900 font-light mb-1">Pulseira Corrente Aniversário</h3>
+                  <p className="text-gray-600 text-sm">R$ 890</p>
+                </div>
+
+                <div className="group">
+                  <div className="relative overflow-hidden mb-4 bg-gray-50">
+                    <img 
+                      src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Brincos Pérola"
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Ver Mais
+                    </button>
+                  </div>
+                  <h3 className="text-gray-900 font-light mb-1">Brincos Pérola</h3>
+                  <p className="text-gray-600 text-sm">R$ 1.290</p>
+                </div>
+
+                <div className="group">
+                  <div className="relative overflow-hidden mb-4 bg-gray-50">
+                    <img 
+                      src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Colar Vintage"
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Ver Mais
+                    </button>
+                  </div>
+                  <h3 className="text-gray-900 font-light mb-1">Colar Vintage</h3>
+                  <p className="text-gray-600 text-sm">R$ 1.890</p>
+                </div>
+
+                <div className="group">
+                  <div className="relative overflow-hidden mb-4 bg-gray-50">
+                    <img 
+                      src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Anel Diamante"
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <button className="absolute bottom-4 left-4 bg-gray-900 text-white px-4 py-2 text-xs font-light tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Ver Mais
+                    </button>
+                  </div>
+                  <h3 className="text-gray-900 font-light mb-1">Anel Diamante</h3>
+                  <p className="text-gray-600 text-sm">R$ 3.450</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <FloatingWhatsAppButton />
     </div>

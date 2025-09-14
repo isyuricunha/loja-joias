@@ -48,18 +48,18 @@ export default function CategoryFilter({
   const hasActiveFilters = selectedCategory || selectedMaterial;
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
+    <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/50 transition-all duration-300">
       {/* Mobile Toggle */}
       <div className="lg:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between p-6 text-left border-b border-gray-200/50"
+          className="w-full flex items-center justify-between p-6 text-left border-b border-gray-700/50"
         >
           <div className="flex items-center space-x-3">
             <div className="bg-amber-500 p-1.5 rounded-lg">
               <Filter className="h-4 w-4 text-white" />
             </div>
-            <span className="font-semibold text-gray-900 text-lg">Filtros</span>
+            <span className="font-light text-white text-lg tracking-wide">Filters</span>
             {hasActiveFilters && (
               <span className="bg-amber-100 text-amber-700 text-xs px-3 py-1 rounded-full font-medium">
                 Ativos
@@ -104,11 +104,11 @@ export default function CategoryFilter({
             onClick={() => setShowCategories(!showCategories)}
             className="w-full flex items-center justify-between mb-4 group"
           >
-            <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+            <h3 className="text-lg font-light text-white flex items-center tracking-wide">
               <div className="bg-amber-500 p-1.5 rounded-lg mr-3">
                 <Tag className="h-4 w-4 text-white" />
               </div>
-              Categorias
+              Categories
             </h3>
             {showCategories ? (
               <ChevronUp className="h-4 w-4 text-pearl-400 group-hover:text-gold-500 transition-colors" />
