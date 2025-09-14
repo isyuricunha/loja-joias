@@ -29,7 +29,7 @@ export default function Home() {
       if (searchQuery) params.append('search', searchQuery);
       if (selectedCategory) params.append('category', selectedCategory);
       if (selectedMaterial) params.append('material', selectedMaterial);
-      
+
       const response = await fetch(`/api/products?${params}`);
       const data = await response.json();
       setProducts(data.products || []);
@@ -66,13 +66,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Clean AXELS Header */}
+      {/* Clean Karolaine do Yuri Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo AXELS Style */}
+            {/* Logo Karolaine do Yuri Style */}
             <div className="flex items-center">
-              <h1 className="text-2xl font-light tracking-[0.3em] text-gray-900">AXELS</h1>
+              <h1 className="text-2xl font-light tracking-[0.3em] text-gray-900">Karolaine do Yuri</h1>
             </div>
 
             {/* Navigation */}
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* AXELS Hero Section - "Discover Sparkle with Style" */}
+      {/* Karolaine do Yuri Hero Section - "Discover Sparkle with Style" */}
       <section className="relative">
         <div className="grid lg:grid-cols-2 min-h-[80vh]">
           {/* Left Side - Content */}
@@ -111,11 +111,11 @@ export default function Home() {
                 <br />
                 <span className="italic">com Estilo</span>
               </h1>
-              
+
               <p className="text-gray-600 text-lg font-light leading-relaxed mb-12 max-w-md">
                 Coleção exclusiva de joias artesanais criadas com diamantes raros e metais preciosos para a perfeição absoluta.
               </p>
-              
+
               <button className="bg-gray-900 text-white px-8 py-3 font-light tracking-wide text-sm uppercase hover:bg-gray-800 transition-all duration-300">
                 Comprar
               </button>
@@ -124,8 +124,8 @@ export default function Home() {
 
           {/* Right Side - Product Image */}
           <div className="relative overflow-hidden bg-gray-50">
-            <img 
-              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            <img
+              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
               alt="Luxury Jewelry"
               className="w-full h-full object-cover"
             />
@@ -145,7 +145,7 @@ export default function Home() {
             {/* Product Cards */}
             <div className="group">
               <div className="relative overflow-hidden mb-4 bg-gray-50">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Diamond Drop Earrings"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -160,7 +160,7 @@ export default function Home() {
 
             <div className="group">
               <div className="relative overflow-hidden mb-4 bg-gray-50">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Femme Chunky Watch"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -175,7 +175,7 @@ export default function Home() {
 
             <div className="group">
               <div className="relative overflow-hidden mb-4 bg-gray-50">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Birthday Chain Bracelet"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -190,7 +190,7 @@ export default function Home() {
 
             <div className="group">
               <div className="relative overflow-hidden mb-4 bg-gray-50">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Pearl Stud Earrings"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -224,12 +224,12 @@ export default function Home() {
               </button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Luxury Collection"
                 className="w-full h-64 object-cover"
               />
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                 alt="Elegant Jewelry"
                 className="w-full h-64 object-cover mt-8"
@@ -239,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Products Section - AXELS Style */}
+      {/* Our Products Section - Karolaine do Yuri Style */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12">
@@ -329,10 +329,10 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
-                {/* Product Cards - AXELS Style */}
+                {/* Product Cards - Karolaine do Yuri Style */}
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Brincos Gota Diamante"
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -347,7 +347,7 @@ export default function Home() {
 
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Relógio Femme Chunky"
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -362,7 +362,7 @@ export default function Home() {
 
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Pulseira Corrente Aniversário"
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -377,7 +377,7 @@ export default function Home() {
 
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Brincos Pérola"
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -392,7 +392,7 @@ export default function Home() {
 
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Colar Vintage"
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -407,7 +407,7 @@ export default function Home() {
 
                 <div className="group">
                   <div className="relative overflow-hidden mb-4 bg-gray-50">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Anel Diamante"
                       className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
